@@ -1,15 +1,22 @@
 const choices = ["rock","paper","scissors"]
+let playerScore = 0
+let computerScore = 0
+let roundWinner = '';
 
 function game() {
     //play the game
-    playRound()
     //play the five round
+    for (let i=0; i<=4; i++){
+        playRound();
+    }
     //console based
 }
 
 function playRound() {
     const playerSelection = playerChoice();
     const computerSelection = computerChoice();
+    const winner = checkWinner(playerSelection, computerSelection);
+    console.log(winner)
 }
 
 function playerChoice () {
@@ -32,6 +39,8 @@ function playerChoice () {
     
         check = inputValidation(input)
     }
+
+    return input;
 }
 
     // console.log(input);
@@ -47,6 +56,28 @@ function computerChoice (){
 function inputValidation(choice){
     return choices.includes(choice); 
 }
+
+function checkWinner(choiceP,choiceC) {
+
+
+
+    if (choiceC === choiceP) {
+        
+        return "Draw";
+
+    }   else if (
+        (choiceP == "rock" && choiceC == "scissors" ) ||
+        (choiceP == "scissors" && choiceC == "paper") ||
+        (choiceP =="paper" && choiceC  == "rock")
+    ){
+        return "Player";
+
+    }   else {
+        return "Computer";
+    }
+}
+
+
 
 game();
 
