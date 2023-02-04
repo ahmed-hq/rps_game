@@ -2,19 +2,53 @@ const choices = ["rock","paper","scissors"]
 
 function game() {
     //play the game
+    playRound()
     //play the five round
     //console based
 }
 
-function playerChoice () {
-    //get input from player
+function playRound() {
+    const playerSelection = playerChoice();
+    const computerSelection = computerChoice();
 }
+
+function playerChoice () {
+    let input = prompt("Type Rock, Paper, or Scissors");
+
+    while (input == null) {
+        input = prompt("Type Rock, Paper, or Scissors");
+    }
+
+    input = input.toLowerCase();
+
+    let check = inputValidation(input)
+    while (check == false) {
+        input = prompt("Spelling needs to be exact, capitilization doesn't matter");
+        while (input == null) {
+            input = prompt("Type Rock, Paper, or Scissors");
+        }
+    
+        input = input.toLowerCase();
+    
+        check = inputValidation(input)
+    }
+}
+
+    // console.log(input);
+    //get input from player
+    
+
 
 function computerChoice (){
     //  get random choice from computer 
     return choices[Math.floor(Math.random()*choices.length)]
 }
 
+function inputValidation(choice){
+    return choices.includes(choice); 
+}
+
+game();
 
 
 
