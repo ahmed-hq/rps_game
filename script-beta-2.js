@@ -9,6 +9,8 @@ function playRound() {
   let playerChoice = getPlayerChoice();
   let computerChoice = getComputerChoice();
   let roundWinner = calcRoundWinner(playerChoice, computerChoice);
+  updScore(roundWinner)
+  console.log(playerScore , computerScore)
   console.log(playerChoice, computerChoice);
   console.log(roundWinner);
 }
@@ -53,4 +55,10 @@ function calcRoundWinner(playerChoice, computerChoice) {
   }
 }
 
-console.log();
+function updScore(roundWinner){
+    if (roundWinner == "player"){
+        playerScore ++
+    } else if (roundWinner == "computer"){
+        computerScore ++
+    } else return
+}
