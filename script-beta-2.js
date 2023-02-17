@@ -9,10 +9,13 @@ function playRound() {
   let playerChoice = getPlayerChoice();
   let computerChoice = getComputerChoice();
   let roundWinner = calcRoundWinner(playerChoice, computerChoice);
-  updScore(roundWinner)
-  console.log(playerScore , computerScore)
-  console.log(playerChoice, computerChoice);
-  console.log(roundWinner);
+  updScore(roundWinner);
+//   console.log("Round Result :-");
+  console.log(`Your Choice : ${playerChoice}`);
+  console.log(`Computer Choice : ${computerChoice}`);
+  console.log(`You [${playerScore}] - [${computerScore}] Computer`);
+  console.log(`Round Winner : ${roundWinner}`);
+  console.log("///////////////////////////////////////////////////")
 }
 for (let i = 1; i <= 5; i++) playRound(i);
 
@@ -49,16 +52,16 @@ function calcRoundWinner(playerChoice, computerChoice) {
     (playerChoice == "paper" && computerChoice == "rock") ||
     (playerChoice == "scissors" && computerChoice == "paper")
   ) {
-    return "player";
+    return "You";
   } else {
     return "tie";
   }
 }
 
-function updScore(roundWinner){
-    if (roundWinner == "player"){
-        playerScore ++
-    } else if (roundWinner == "computer"){
-        computerScore ++
-    } else return
+function updScore(roundWinner) {
+  if (roundWinner == "You") {
+    playerScore++;
+  } else if (roundWinner == "computer") {
+    computerScore++;
+  } else return;
 }
