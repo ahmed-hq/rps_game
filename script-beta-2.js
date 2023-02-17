@@ -17,7 +17,17 @@ function playRound() {
   console.log(`Round Winner : ${roundWinner}`);
   console.log("///////////////////////////////////////////////////")
 }
+
+
 for (let i = 1; i <= 5; i++) playRound(i);
+
+
+function endGame(){
+    console.log(finalResult(playerScore, computerScore));
+    console.log(`You [${playerScore}] - [${computerScore}] Computer`);
+    console.log("Reload the page to start a new game")
+
+}
 
 function getComputerChoice() {
   let choices = ["rock", "paper", "scissors"];
@@ -65,3 +75,15 @@ function updScore(roundWinner) {
     computerScore++;
   } else return;
 }
+
+function finalResult (playerScore, computerScore){
+    if (playerScore > computerScore){
+        return "Congratulations You Are The Winner 🎉"
+    } else if (computerScore > playerScore){
+        return "Computer Wins This Time"
+    } else {
+        return "Tie Wins"
+    }
+}
+
+endGame()
