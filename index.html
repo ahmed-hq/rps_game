@@ -14,7 +14,6 @@
       href="https://fonts.googleapis.com/css2?family=VT323&display=swap"
       rel="stylesheet"
     />
-    
   </head>
   <body>
     <div class="page-wrapper">
@@ -42,12 +41,12 @@
               <div class="result-wrapper">
                 <div class="result-card">
                   <div class="scores-wrapper">
-                    <div class="player-score"></div>
-                    <p>-</p>
-                    <div class="computer-score"></div>
+                    <p class="scores" id="player-score">0</p>
+                    <p class="scores">-</p>
+                    <p class="scores" id="computer-score">0</p>
                   </div>
-                  <div class="final-result">
-                    <!-- text block telling who won -->
+                  <div class="final-result-wrapper">
+                    <h1 id="final-result"></h1>
                   </div>
                 </div>
                 <button>Play Again</button>
