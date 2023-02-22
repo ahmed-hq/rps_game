@@ -12,6 +12,15 @@ h1{
     font-weight: 400;
 }
 
+button{
+    width: 100%;
+    font-family: 'VT323' , monospace;
+    font-size: 32px;
+    line-height: 32px;
+    padding: 12px;
+    border-radius: 15px;
+}
+
 .page-wrapper{
     overflow: hidden;
 
@@ -42,7 +51,7 @@ h1{
 
 .emoji-wrapper{
     position: absolute;
-    margin-top: 6%;
+    margin-top: 74px;
 }
 
 .computer-emoji{
@@ -99,6 +108,12 @@ h1{
 #final-result{
     display: none;
 }
+
+#play-again{
+    display: none;
+}
+
+
 
 
 
