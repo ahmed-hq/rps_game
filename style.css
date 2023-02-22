@@ -19,28 +19,47 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
+    
 }
 
-.container{
-
-}
 
 .computer-wrapper{
-    position: relative;
+    display: flex;
+    justify-content: center;
+    margin: 0px 0px 44px 0px;
 }
 
 .computer{
     position:relative;
 }
 
-.computer-emoji{
+.emoji-wrapper{
     position: absolute;
-    left: 0%;
-    right: 0%;
-    bottom: 0%;
-    top: 0%;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 27%;
+    top: 25%;
+}
+
+.computer-emoji{
+    
+
+    
     
 }
+
+.player_choices-wrapper{
+    display: flex;
+    gap: 42px;
+    
+
+    
+}
+
+.player-choice{
+    background-color: #32324B;
+
+    display: flex;
+
+    padding: 18px 35px;
+    border-radius: 30px;
+
+}
+
