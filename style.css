@@ -5,6 +5,13 @@ body{
     color: #FFFFFC;
 }
 
+h1{
+    margin: 0;
+    line-height: 62px;
+    font-size: 62px;
+    font-weight: 400;
+}
+
 .page-wrapper{
     overflow: hidden;
 
@@ -62,4 +69,31 @@ body{
     border-radius: 30px;
 
 }
+
+.result-card{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 42px auto;
+    
+    background-color: #32324B;
+    border-radius: 30px;
+    max-width: 266px;
+    height: 166px;
+}
+
+.scores-wrapper{
+    display: flex;
+}
+
+.scores{
+    margin: 0px 10px;
+}
+
+#final-result{
+    display: none;
+}
+
+
 
