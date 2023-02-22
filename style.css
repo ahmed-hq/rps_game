@@ -42,7 +42,7 @@ h1{
 
 .emoji-wrapper{
     position: absolute;
-    top: 25%;
+    margin-top: 6%;
 }
 
 .computer-emoji{
@@ -70,6 +70,12 @@ h1{
 
 }
 
+.result-wrapper{
+    margin: 0px auto;
+    max-width: 266px;
+
+}
+
 .result-card{
     display: flex;
     flex-direction: column;
@@ -79,7 +85,6 @@ h1{
     
     background-color: #32324B;
     border-radius: 30px;
-    max-width: 266px;
     height: 166px;
 }
 
