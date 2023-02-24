@@ -64,6 +64,12 @@ button {
   padding: 18px 35px;
   border-radius: 30px;
 }
+.player-choice:hover{
+  background-color: #3E3E5B;
+}
+.player-choice:active{
+  background-color: #48486B;
+}
 
 .result-wrapper {
   margin: 0px auto;
@@ -97,3 +103,5 @@ button {
 #play-again {
   display: none;
 }
+
+

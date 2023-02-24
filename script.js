@@ -14,11 +14,8 @@ let gameResult;
 
 // Start the game
 // Play Round
-
 playerRock.addEventListener("click", selectRock);
-
 playerPaper.addEventListener("click", selectPaper);
-
 playerScissors.addEventListener("click", selectScissors);
 
 playBtn.addEventListener("click", () => {
