@@ -1,21 +1,21 @@
-let computerEmoji = document.querySelector(".computer-emoji")
+let computerEmoji = document.querySelector(".computer-emoji");
+let computerSign = document.querySelector(".computer-sign");
 let playerChoices = document.querySelectorAll(".player-choice");
 let playerRock = document.querySelector("#player-rock");
 let playerPaper = document.querySelector("#player-paper");
 let playerScissors = document.querySelector("#player-scissor");
 let playBtn = document.querySelector("#play-again");
 let pS = document.querySelector("#player-score");
-let cS = document.querySelector("#computer-score")
-let finalResultType = document.querySelector("#final-result")
-let gameSection = document.querySelector(".game-section")
+let cS = document.querySelector("#computer-score");
+let finalResultType = document.querySelector("#final-result");
+let gameSection = document.querySelector(".game-section");
 
-let rounds = 0
+let rounds = 0;
 let playerChoice = "";
 let playerScore = 0;
 let computerScore = 0;
 let ties = 0;
 let gameResult;
-
 
 // Start the game
 // Play Round
@@ -23,54 +23,52 @@ playerRock.addEventListener("click", selectRock);
 playerPaper.addEventListener("click", selectPaper);
 playerScissors.addEventListener("click", selectScissors);
 
-
 playBtn.addEventListener("click", () => {
-  location.reload()
-})
+  location.reload();
+});
 
-
-function selectRock(){
+function selectRock() {
   chooseRock();
   playRound();
 }
-function selectScissors(){
+function selectScissors() {
   chooseScissors();
   playRound();
 }
-function selectPaper(){
+function selectPaper() {
   choosePaper();
   playRound();
 }
 
+function playRound() {
+  let computerChoice = getComputerChoice();
+  let roundWinner = calcRoundWinner(playerChoice, computerChoice);
+  updScore(roundWinner);
+  rounds++;
 
-  function playRound(){
-      let computerChoice = getComputerChoice();
-      let roundWinner = calcRoundWinner(playerChoice, computerChoice);
-      updScore(roundWinner);
-      rounds++
+  //   console.log("Round Result :-");
+  console.log(`Your Choice : ${playerChoice}`);
+  console.log(`computer Choice : ${computerChoice}`);
 
-      //   console.log("Round Result :-");
-      console.log(`Your Choice : ${playerChoice}`);
-      finalResultMessage()
-      getComputerEmoji(computerChoice)
-      pS.innerText= `${playerScore}`
-      cS.innerText= `${computerScore}`
-      console.log(`Round Winner : ${roundWinner}`);
-      console.log("///////////////////////////////////////////////////");
-      if (rounds === 5){
-        console.log("-----------");
-        removeEnlarge()
-        endGame()
-        displayBtn()
-        removeEvent()
-        console.log("-----------");
-      }
-    };
+  finalResultMessage();
+  getComputerEmoji(computerChoice);
+  roundResult(roundWinner);
 
-  // for (let i = 1; i <= 5; i++) playGame(i);
+  pS.innerText = `${playerScore}`;
+  cS.innerText = `${computerScore}`;
+  console.log(`Round Winner : ${roundWinner}`);
+  console.log("///////////////////////////////////////////////////");
+  if (rounds === 5) {
+    console.log("-----------");
+    removeEnlarge();
+    endGame();
+    displayBtn();
+    removeEvent();
+    console.log("-----------");
+  }
+}
 
 function endGame() {
-  
   console.log(finalResult(playerScore, computerScore));
   console.log(`You [${playerScore}] - [${computerScore}] Computer`);
   console.log("Reload the page to start a new game");
@@ -81,20 +79,23 @@ function getComputerChoice() {
   return choices[Math.floor(Math.random() * 3)];
 }
 
-function getComputerEmoji(computerChoice){
-  if (rounds === 5 && computerScore > playerScore){
-    return computerEmoji.src = "images/laughing.svg";
-  } else if (rounds === 5 && computerScore === playerScore){
-    return computerEmoji.src = "images/happy.svg";
-  } else if (rounds === 5 && computerScore < playerScore){
-    return computerEmoji.src = "images/angry.svg";
-  } else if (computerChoice == "rock"){
-    return computerEmoji.src = "images/rock.svg";
-  } else if (computerChoice == "paper"){
-    return computerEmoji.src = "images/paper.svg";
-  } else if (computerChoice == "scissors"){
-    return computerEmoji.src = "images/scissor.svg";
-  } 
+function getComputerEmoji(computerChoice) {
+  if (rounds === 5 && computerScore > playerScore) {
+    computerEmoji.src = "images/laughing.svg";
+    computerSign.style.opacity = "0%"
+  } else if (rounds === 5 && computerScore === playerScore) {
+    computerEmoji.src = "images/happy.svg";
+    computerSign.style.opacity = "0%"
+  } else if (rounds === 5 && computerScore < playerScore) {
+    computerEmoji.src = "images/angry.svg";
+    computerSign.style.opacity = "0%"
+  } else if (computerChoice == "rock") {
+    return (computerEmoji.src = "images/rock.svg");
+  } else if (computerChoice == "paper") {
+    return (computerEmoji.src = "images/paper.svg");
+  } else if (computerChoice == "scissors") {
+    return (computerEmoji.src = "images/scissor.svg");
+  }
 }
 
 function calcRoundWinner(playerChoice, computerChoice) {
@@ -112,6 +113,16 @@ function calcRoundWinner(playerChoice, computerChoice) {
     return "You";
   } else {
     return "tie";
+  }
+}
+
+function roundResult(roundWinner) {
+  if (roundWinner === "computer") {
+    computerSign.style.backgroundColor = "#329F5B";
+  } else if (roundWinner === "You") {
+    computerSign.style.backgroundColor = "#E94F37";
+  } else if (roundWinner === "tie") {
+    computerSign.style.backgroundColor = "#F2DD6E";
   }
 }
 
@@ -133,23 +144,23 @@ function finalResult(playerScore, computerScore) {
   }
 }
 
-function removeEnlarge(){
-  pS.style.fontSize = "62px"
-  cS.style.fontSize = "62px"
+function removeEnlarge() {
+  pS.style.fontSize = "62px";
+  cS.style.fontSize = "62px";
 }
 
-function finalResultMessage(){
-  if (rounds === 5 && computerScore > playerScore){
+function finalResultMessage() {
+  if (rounds === 5 && computerScore > playerScore) {
     gameSection.style.borderColor = "#E94F37";
     finalResultType.innerText = "You Lost";
     finalResultType.style.display = "block";
     finalResultType.style.color = "#E94F37";
-  } else if (rounds === 5 && computerScore === playerScore){
+  } else if (rounds === 5 && computerScore === playerScore) {
     gameSection.style.borderColor = "#F2DD6E";
     finalResultType.innerText = "Tie";
     finalResultType.style.display = "block";
     finalResultType.style.color = "#F2DD6E";
-  } else if (rounds === 5 && computerScore < playerScore){
+  } else if (rounds === 5 && computerScore < playerScore) {
     gameSection.style.borderColor = "#329F5B";
     finalResultType.innerText = "You Won";
     finalResultType.style.display = "block";
@@ -157,35 +168,32 @@ function finalResultMessage(){
   }
 }
 
-function removeEvent(){
+function removeEvent() {
   playerRock.removeEventListener("click", selectRock);
-  
+
   playerPaper.removeEventListener("click", selectPaper);
-  
+
   playerScissors.removeEventListener("click", selectScissors);
 }
 
-function chooseRock(){
+function chooseRock() {
   playerChoice = "rock";
   return playerChoice;
 }
 
-function choosePaper(){
+function choosePaper() {
   playerChoice = "paper";
   return playerChoice;
 }
 
-function chooseScissors(){
+function chooseScissors() {
   playerChoice = "scissors";
   return playerChoice;
 }
 
-function displayBtn(){
-  playBtn.style.display= "block";
+function displayBtn() {
+  playBtn.style.display = "block";
 }
-
-
-
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // let playerScore = 0;

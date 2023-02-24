@@ -46,8 +46,19 @@ button {
   position: relative;
 }
 
+.computer-sign {
+  position: absolute;
+  z-index: 1;
+  margin-top: 47px;
+  height: 152px;
+  width: 192px;
+  opacity: 20%;
+  border-radius: 15px;
+}
+
 .emoji-wrapper {
   position: absolute;
+  z-index: 2;
   margin-top: 74px;
 }
 
