@@ -47,6 +47,7 @@ playerScissors.addEventListener("click", () => {
       if (rounds === 5){
         console.log("-----------");
         endGame()
+        displayBtn()
         removeEvent()
         console.log("-----------");
       }
