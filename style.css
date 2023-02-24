@@ -51,6 +51,10 @@ button {
   margin-top: 74px;
 }
 
+.computer-emoji {
+  opacity: 50%;
+}
+
 .player_choices-wrapper {
   display: flex;
   gap: 42px;
