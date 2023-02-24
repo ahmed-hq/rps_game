@@ -30,6 +30,10 @@ playerScissors.addEventListener("click", () => {
   playRound();
 });
 
+playBtn.addEventListener("click", () => {
+  location.reload()
+})
+
 
   function playRound(){
       let computerChoice = getComputerChoice();
