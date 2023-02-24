@@ -15,24 +15,29 @@ let gameResult;
 // Start the game
 // Play Round
 
-playerRock.addEventListener("click", () => {
-  chooseRock();
-  playRound();
-});
+playerRock.addEventListener("click", selectRock);
 
-playerPaper.addEventListener("click", () => {
-  choosePaper();
-  playRound();
-});
+playerPaper.addEventListener("click", selectPaper);
 
-playerScissors.addEventListener("click", () => {
-  chooseScissors();
-  playRound();
-});
+playerScissors.addEventListener("click", selectScissors);
 
 playBtn.addEventListener("click", () => {
   location.reload()
 })
+
+
+function selectRock(){
+  chooseRock();
+  playRound();
+}
+function selectScissors(){
+  chooseScissors();
+  playRound();
+}
+function selectPaper(){
+  choosePaper();
+  playRound();
+}
 
 
   function playRound(){
@@ -111,20 +116,11 @@ function finalResult(playerScore, computerScore) {
 }
 
 function removeEvent(){
-  playerRock.removeEventListener("click", () => {
-    chooseRock();
-    playRound();
-  });
+  playerRock.removeEventListener("click", selectRock);
   
-  playerPaper.removeEventListener("click", () => {
-    choosePaper();
-    playRound();
-  });
+  playerPaper.removeEventListener("click", selectPaper);
   
-  playerScissors.removeEventListener("click", () => {
-    chooseScissors();
-    playRound();
-  });
+  playerScissors.removeEventListener("click", selectScissors);
 }
 
 function chooseRock(){
