@@ -1,119 +1,99 @@
-body{
-    font-family: 'VT323', monospace;
-    background-color: #202030;
-    margin: 0;
-    color: #FFFFFC;
+body {
+  font-family: "VT323", monospace;
+  background-color: #202030;
+  margin: 0;
+  color: #fffffc;
 }
 
-h1{
-    margin: 0;
-    line-height: 62px;
-    font-size: 62px;
-    font-weight: 400;
+h1 {
+  margin: 0;
+  line-height: 62px;
+  font-size: 62px;
+  font-weight: 400;
 }
 
-button{
-    width: 100%;
-    font-family: 'VT323' , monospace;
-    font-size: 32px;
-    line-height: 32px;
-    padding: 12px;
-    border-radius: 15px;
+button {
+  width: 100%;
+  font-family: "VT323", monospace;
+  font-size: 32px;
+  line-height: 32px;
+  padding: 12px;
+  border-radius: 15px;
 }
 
-.page-wrapper{
-    overflow: hidden;
-
+.page-wrapper {
+  overflow: hidden;
 }
 
-.game-section{
-    width: 98.5.6vw;
-    height: 97.5vh;
-    border-color: #FFFFFC;
-    border-style: solid;
-    border-width: 12px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    
+.game-section {
+  width: 98.5.6vw;
+  height: 97.5vh;
+  border-color: #fffffc;
+  border-style: solid;
+  border-width: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-
-.computer-wrapper{
-    display: flex;
-    justify-content: center;
-    margin: 0px 0px 44px 0px;
+.computer-wrapper {
+  display: flex;
+  justify-content: center;
+  margin: 0px 0px 44px 0px;
 }
 
-.computer{
-    position:relative;
+.computer {
+  position: relative;
 }
 
-.emoji-wrapper{
-    position: absolute;
-    margin-top: 74px;
+.emoji-wrapper {
+  position: absolute;
+  margin-top: 74px;
 }
 
-.computer-emoji{
-    
-
-    
-    
+.player_choices-wrapper {
+  display: flex;
+  gap: 42px;
 }
 
-.player_choices-wrapper{
-    display: flex;
-    gap: 42px;
-    
+.player-choice {
+  background-color: #32324b;
 
-    
+  display: flex;
+
+  padding: 18px 35px;
+  border-radius: 30px;
 }
 
-.player-choice{
-    background-color: #32324B;
-
-    display: flex;
-
-    padding: 18px 35px;
-    border-radius: 30px;
-
+.result-wrapper {
+  margin: 0px auto;
+  max-width: 266px;
 }
 
-.result-wrapper{
-    margin: 0px auto;
-    max-width: 266px;
+.result-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 42px auto;
 
+  background-color: #32324b;
+  border-radius: 30px;
+  height: 166px;
 }
 
-.result-card{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin: 42px auto;
-    
-    background-color: #32324B;
-    border-radius: 30px;
-    height: 166px;
+.scores-wrapper {
+  display: flex;
 }
 
-.scores-wrapper{
-    display: flex;
+.scores {
+  margin: 0px 10px;
 }
 
-.scores{
-    margin: 0px 10px;
+#final-result {
+  display: none;
 }
 
-#final-result{
-    display: none;
+#play-again {
+  display: none;
 }
-
-#play-again{
-    display: none;
-}
-
-
-
-
-
