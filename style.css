@@ -96,6 +96,10 @@ button {
   margin: 0px 10px;
 }
 
+.enlarge{
+  font-size: 81px;
+}
+
 #final-result {
   display: none;
 }
