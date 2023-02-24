@@ -3,6 +3,8 @@ let playerRock = document.querySelector("#player-rock");
 let playerPaper = document.querySelector("#player-paper");
 let playerScissors = document.querySelector("#player-scissor");
 let playBtn = document.querySelector("#play-again");
+let pS = document.querySelector("#player-score");
+let cS = document.querySelector("#computer-score")
 
 let rounds = 0
 let playerChoice = "";
@@ -17,6 +19,7 @@ let gameResult;
 playerRock.addEventListener("click", selectRock);
 playerPaper.addEventListener("click", selectPaper);
 playerScissors.addEventListener("click", selectScissors);
+
 
 playBtn.addEventListener("click", () => {
   location.reload()
@@ -47,6 +50,8 @@ function selectPaper(){
       console.log(`Your Choice : ${playerChoice}`);
       console.log(`Computer Choice : ${computerChoice}`);
       console.log(`You [${playerScore}] - [${computerScore}] Computer`);
+      pS.innerText= `${playerScore}`
+      cS.innerText= `${computerScore}`
       console.log(`Round Winner : ${roundWinner}`);
       console.log(`Round ${rounds}`)
       console.log("///////////////////////////////////////////////////");
