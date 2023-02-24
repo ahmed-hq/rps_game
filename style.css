@@ -103,5 +103,11 @@ button {
 #play-again {
   display: none;
 }
+#play-again:hover{
+  opacity: 90%;
+}
+#play-again:active{
+  opacity: 80%;
+}
 
 
