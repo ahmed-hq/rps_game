@@ -86,6 +86,7 @@ button {
   background-color: #48486B;
 }
 
+
 .result-wrapper {
   margin: 0px auto;
   max-width: 266px;
@@ -128,5 +129,4 @@ button {
 #play-again:active{
   opacity: 80%;
 }
-
 

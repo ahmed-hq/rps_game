@@ -11,14 +11,13 @@ let finalResultType = document.querySelector("#final-result");
 let gameSection = document.querySelector(".game-section");
 
 let rounds = 0;
+let roundWinner = "";
 let playerChoice = "";
 let playerScore = 0;
 let computerScore = 0;
 let ties = 0;
 let gameResult;
 
-// Start the game
-// Play Round
 playerRock.addEventListener("click", selectRock);
 playerPaper.addEventListener("click", selectPaper);
 playerScissors.addEventListener("click", selectScissors);
@@ -40,38 +39,90 @@ function selectPaper() {
   playRound();
 }
 
+function playerSignRock() {
+  if (roundWinner === "You") {
+    playerRock.style.backgroundColor = "#329F5B";
+    setTimeout(() => {
+      playerRock.style.backgroundColor = "#32324b";
+    }, 300);
+  } else if (roundWinner === "computer") {
+    playerRock.style.backgroundColor = "#E94F37";
+    setTimeout(() => {
+      playerRock.style.backgroundColor = "#32324b";
+    }, 300);
+  } else if (roundWinner === "tie") {
+    playerRock.style.backgroundColor = "#F2DD6E";
+    setTimeout(() => {
+      playerRock.style.backgroundColor = "#32324b";
+    }, 300);
+  }
+}
+
+function playerSignPaper() {
+  if (roundWinner === "You") {
+    playerPaper.style.backgroundColor = "#329F5B";
+    setTimeout(() => {
+      playerPaper.style.backgroundColor = "#32324b";
+    }, 300);
+  } else if (roundWinner === "computer") {
+    playerPaper.style.backgroundColor = "#E94F37";
+    setTimeout(() => {
+      playerPaper.style.backgroundColor = "#32324b";
+    }, 300);
+  } else if (roundWinner === "tie") {
+    playerPaper.style.backgroundColor = "#F2DD6E";
+    setTimeout(() => {
+      playerPaper.style.backgroundColor = "#32324b";
+    }, 300);
+  }
+}
+
+function playerSignScissors() {
+  if (roundWinner === "You") {
+    playerScissors.style.backgroundColor = "#329F5B";
+    setTimeout(() => {
+      playerScissors.style.backgroundColor = "#32324b";
+    }, 300);
+  } else if (roundWinner === "computer") {
+    playerScissors.style.backgroundColor = "#E94F37";
+    setTimeout(() => {
+      playerScissors.style.backgroundColor = "#32324b";
+    }, 300);
+  } else if (roundWinner === "tie") {
+    playerScissors.style.backgroundColor = "#F2DD6E";
+    setTimeout(() => {
+      playerScissors.style.backgroundColor = "#32324b";
+    }, 300);
+  }
+}
+
+function findSign() {
+  if (playerChoice == "rock") {
+    playerSignRock();
+  } else if (playerChoice == "paper") {
+    playerSignPaper();
+  } else if (playerChoice == "scissors") {
+    playerSignScissors();
+  }
+}
+
 function playRound() {
   let computerChoice = getComputerChoice();
-  let roundWinner = calcRoundWinner(playerChoice, computerChoice);
+  roundWinner = calcRoundWinner(playerChoice, computerChoice);
+  findSign();
   updScore(roundWinner);
   rounds++;
-
-  //   console.log("Round Result :-");
-  console.log(`Your Choice : ${playerChoice}`);
-  console.log(`computer Choice : ${computerChoice}`);
 
   finalResultMessage();
   getComputerEmoji(computerChoice);
   roundResult(roundWinner);
-
   pS.innerText = `${playerScore}`;
   cS.innerText = `${computerScore}`;
-  console.log(`Round Winner : ${roundWinner}`);
-  console.log("///////////////////////////////////////////////////");
   if (rounds === 5) {
-    console.log("-----------");
     removeEnlarge();
-    endGame();
     displayBtn();
     removeEvent();
-    console.log("-----------");
   }
-}
-
-function endGame() {
-  console.log(finalResult(playerScore, computerScore));
-  console.log(`You [${playerScore}] - [${computerScore}] Computer`);
-  console.log("Reload the page to start a new game");
 }
 
 function getComputerChoice() {
@@ -82,13 +133,13 @@ function getComputerChoice() {
 function getComputerEmoji(computerChoice) {
   if (rounds === 5 && computerScore > playerScore) {
     computerEmoji.src = "images/laughing.svg";
-    computerSign.style.opacity = "0%"
+    computerSign.style.opacity = "0%";
   } else if (rounds === 5 && computerScore === playerScore) {
     computerEmoji.src = "images/happy.svg";
-    computerSign.style.opacity = "0%"
+    computerSign.style.opacity = "0%";
   } else if (rounds === 5 && computerScore < playerScore) {
     computerEmoji.src = "images/angry.svg";
-    computerSign.style.opacity = "0%"
+    computerSign.style.opacity = "0%";
   } else if (computerChoice == "rock") {
     return (computerEmoji.src = "images/rock.svg");
   } else if (computerChoice == "paper") {
@@ -194,92 +245,3 @@ function chooseScissors() {
 function displayBtn() {
   playBtn.style.display = "block";
 }
-
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// let playerScore = 0;
-// let computerScore = 0;
-// let ties = 0;
-// let gameResult;
-
-// // Start the game
-// // Play Round
-// function playRound() {
-//   let playerChoice = getPlayerChoice();
-//   let computerChoice = getComputerChoice();
-//   let roundWinner = calcRoundWinner(playerChoice, computerChoice);
-//   updScore(roundWinner);
-// //   console.log("Round Result :-");
-//   console.log(`Your Choice : ${playerChoice}`);
-//   console.log(`Computer Choice : ${computerChoice}`);
-//   console.log(`You [${playerScore}] - [${computerScore}] Computer`);
-//   console.log(`Round Winner : ${roundWinner}`);
-//   console.log("///////////////////////////////////////////////////")
-// }
-
-// for (let i = 1; i <= 5; i++) playRound(i);
-
-// function endGame(){
-//     console.log(finalResult(playerScore, computerScore));
-//     console.log(`You [${playerScore}] - [${computerScore}] Computer`);
-//     console.log("Reload the page to start a new game")
-
-// }
-
-// function getComputerChoice() {
-//   let choices = ["rock", "paper", "scissors"];
-//   return choices[Math.floor(Math.random() * 3)];
-// }
-
-// function getPlayerChoice() {
-//   loop: while (true) {
-//     let playerChoice = prompt("Rock - Paper - Scissors").toLowerCase();
-//     switch (playerChoice) {
-//       case "rock":
-//         return (playerChoice = "rock");
-//       case "paper":
-//         return (playerChoice = "paper");
-//       case "scissors":
-//         return (playerChoice = "scissors");
-//       default:
-//         alert("Not Valid");
-//     }
-//   }
-// }
-
-// function calcRoundWinner(playerChoice, computerChoice) {
-//   if (
-//     (computerChoice == "rock" && playerChoice == "scissors") ||
-//     (computerChoice == "paper" && playerChoice == "rock") ||
-//     (computerChoice == "scissors" && playerChoice == "paper")
-//   ) {
-//     return "computer";
-//   } else if (
-//     (playerChoice == "rock" && computerChoice == "scissors") ||
-//     (playerChoice == "paper" && computerChoice == "rock") ||
-//     (playerChoice == "scissors" && computerChoice == "paper")
-//   ) {
-//     return "You";
-//   } else {
-//     return "tie";
-//   }
-// }
-
-// function updScore(roundWinner) {
-//   if (roundWinner == "You") {
-//     playerScore++;
-//   } else if (roundWinner == "computer") {
-//     computerScore++;
-//   } else return;
-// }
-
-// function finalResult (playerScore, computerScore){
-//     if (playerScore > computerScore){
-//         return "Congratulations You Are The Winner 🎉"
-//     } else if (computerScore > playerScore){
-//         return "Computer Wins This Time"
-//     } else {
-//         return "Tie Wins"
-//     }
-// }
-
-// endGame()
