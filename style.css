@@ -79,13 +79,12 @@ button {
   padding: 18px 35px;
   border-radius: 30px;
 }
-.player-choice:hover{
-  background-color: #3E3E5B;
+.player-choice:hover {
+  background-color: #3e3e5b;
 }
-.player-choice:active{
-  background-color: #48486B;
+.player-choice:active {
+  background-color: #48486b;
 }
-
 
 .result-wrapper {
   margin: 0px auto;
@@ -112,7 +111,7 @@ button {
   margin: 0px 10px;
 }
 
-.enlarge{
+.enlarge {
   font-size: 81px;
 }
 
@@ -122,11 +121,11 @@ button {
 
 #play-again {
   display: none;
+  border: none;
 }
-#play-again:hover{
+#play-again:hover {
   opacity: 90%;
 }
-#play-again:active{
+#play-again:active {
   opacity: 80%;
 }
-
